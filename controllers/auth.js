@@ -43,7 +43,7 @@ export const register = async (req, res) => {
             email,
             password: passwordHash,
             picturePath: uploadedFile.url,
-            friends,
+            friends: [],
             location,
             occupation,
             viewedProfile: Math.floor(Math.random() * 1000),
