@@ -26,6 +26,8 @@ export const register = async (req, res) => {
             occupation
         } = req.body;
 
+        console.log(req.body);
+
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
 
@@ -49,6 +51,8 @@ export const register = async (req, res) => {
             viewedProfile: Math.floor(Math.random() * 1000),
             impressions: Math.floor(Math.random() * 1000)
         });
+        console.log("newUser: ",newUser);
+
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
 
